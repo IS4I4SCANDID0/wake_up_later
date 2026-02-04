@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:intl/intl.dart';
 import 'views/home_page.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(const WakeUpLaterApp());
@@ -31,22 +32,8 @@ class _WakeUpLaterAppState extends State<WakeUpLaterApp> {
       debugShowCheckedModeBanner: false,
       title: 'Wake Up Later',
       themeMode: _themeMode,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.lightBlue,
-          brightness: Brightness.light,
-        ),
-        scaffoldBackgroundColor: const Color(0xFF3399FF),
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          brightness: Brightness.dark,
-        ),
-        scaffoldBackgroundColor: const Color(0xFF02003F),
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       home: AlarmHomePage(onThemeChanged: _toggleTheme),
     );
   }
